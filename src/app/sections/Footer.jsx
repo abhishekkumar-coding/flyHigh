@@ -8,11 +8,11 @@ function Footer() {
     return (
         <footer className="w-full bg-gray-100 text-gray-800 px-4 py-10 mt-10">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row flex-wrap justify-between gap-10">
+                <div className="flex flex-col md:flex-row flex-wrap gap-10 justify-between">
                     {/* Logo & Contact Info */}
-                    <div className="w-full md:w-[45%] lg:w-[30%]">
+                    <div className="flex-1 min-w-[250px]">
                         <div className="mb-6">
-                            <h1 className="text-4xl font-bold">LOGO</h1>
+                            <h1 className="text-3xl sm:text-4xl font-bold">LOGO</h1>
                         </div>
                         <div className="flex flex-col gap-4 text-sm">
                             <div className="flex items-center gap-3">
@@ -30,56 +30,59 @@ function Footer() {
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-xl text-yellow-600 mt-1" />
                                 <span className="font-medium max-w-xs">
-                                    H.Q. - 3rd Floor, Landmark Tower, Plot no-2, South City-1, Ashok Marg, Sector 41 Gurugram Haryana 122001
+                                    H.Q. - 3rd Floor, Landmark Tower, Plot no-2, South City-1, Ashok Marg, Sector 41 Gurugram, Haryana 122001
                                 </span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div className="w-full md:w-[25%] lg:w-[20%]">
-                        <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
-                        <ul className="space-y-2 text-sm">
-                            <li>Home</li>
-                            <li>Blogs</li>
-                            <li>Specialized Holidays</li>
-                            <li>About Us</li>
-                            <li>Contact Us</li>
-                            <li>Privacy Policy</li>
-                            <li>Terms & Conditions</li>
-                            <li>Cancellation Policy</li>
-                            <li>Payment Details</li>
-                        </ul>
-                    </div>
+                    {/* Link Sections */}
+                    <div className="flex flex-wrap gap-10 justify-between flex-1 min-w-[250px]">
+                        {/* Quick Links */}
+                        <div className="min-w-[150px]">
+                            <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
+                            <ul className="space-y-2 text-sm">
+                                <li>Home</li>
+                                <li>Blogs</li>
+                                <li>Specialized Holidays</li>
+                                <li>About Us</li>
+                                <li>Contact Us</li>
+                                <li>Privacy Policy</li>
+                                <li>Terms & Conditions</li>
+                                <li>Cancellation Policy</li>
+                                <li>Payment Details</li>
+                            </ul>
+                        </div>
 
-                    {/* Domestic Destinations */}
-                    <div className="w-full md:w-[20%] lg:w-[15%]">
-                        <h2 className="text-xl font-semibold mb-4">Domestic</h2>
-                        <ul className="space-y-2 text-sm">
-                            <li>Goa</li>
-                            <li>North East</li>
-                            <li>Andman</li>
-                            <li>Kerala</li>
-                            <li>Ladakh</li>
-                            <li>Kashmir</li>
-                        </ul>
-                    </div>
+                        {/* Domestic */}
+                        <div className="min-w-[150px]">
+                            <h2 className="text-xl font-semibold mb-4">Domestic</h2>
+                            <ul className="space-y-2 text-sm">
+                                <li>Goa</li>
+                                <li>North East</li>
+                                <li>Andaman</li>
+                                <li>Kerala</li>
+                                <li>Ladakh</li>
+                                <li>Kashmir</li>
+                            </ul>
+                        </div>
 
-                    {/* International Destinations */}
-                    <div className="w-full md:w-[20%] lg:w-[15%]">
-                        <h2 className="text-xl font-semibold mb-4">International</h2>
-                        <ul className="space-y-2 text-sm">
-                            <li>Dubai</li>
-                            <li>Thailand</li>
-                            <li>Singapore</li>
-                            <li>Vietnam</li>
-                            <li>Maldives</li>
-                            <li>Bali</li>
-                        </ul>
+                        {/* International */}
+                        <div className="min-w-[150px]">
+                            <h2 className="text-xl font-semibold mb-4">International</h2>
+                            <ul className="space-y-2 text-sm">
+                                <li>Dubai</li>
+                                <li>Thailand</li>
+                                <li>Singapore</li>
+                                <li>Vietnam</li>
+                                <li>Maldives</li>
+                                <li>Bali</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
+                {/* Bottom Text */}
                 <div className="mt-10 border-t pt-6 text-center text-sm text-gray-500">
                     © {new Date().getFullYear()} All Rights Reserved | Designed by Abhi Web Dev
                 </div>

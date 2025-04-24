@@ -21,7 +21,7 @@ function Navbar() {
 
     return (
         <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-black/40 text-white fixed z-50 transition-all duration-300`}>
-            <div className="max-w-6xl mx-auto py-4 px-4 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-2xl font-bold">LOGO</div>
 
