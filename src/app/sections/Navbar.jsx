@@ -36,7 +36,7 @@ function Navbar() {
                         <span>Destination</span> <RiArrowDropDownLine className='text-3xl transform transition-transform duration-300 group-hover:-rotate-180' />
                     </li>
                     <li className="group hover:text-yellow-400 cursor-pointer flex items-center justify-center">
-                        <span>Specialed Trip</span>
+                        <span>Specialized Trip</span>
                         <RiArrowDropDownLine className="text-3xl transform transition-transform duration-300 group-hover:-rotate-180" />
                     </li>
                     <li className="hover:text-yellow-400 cursor-pointer">Blogs</li>

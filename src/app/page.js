@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from './sections/Hero'
 import IndiaDestinations from './sections/IndiaDestinationsIndia'
 import InternationalDestinations from './sections/InternationalDestinations'
-import InDemandDestinationsIndia from './sections/InDemandDestinations'
+// import InDemandDestinationsIndia from './sections/InDemandDestinations'
 
 function page() {
   return (
@@ -10,7 +10,7 @@ function page() {
       <Hero />
       <IndiaDestinations />
       <InternationalDestinations/>
-      <InDemandDestinationsIndia/>
+      {/* <InDemandDestinationsIndia/> */}
     </div>
   )
 }
