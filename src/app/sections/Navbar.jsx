@@ -1,10 +1,26 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useRef, useState } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 function Navbar() {
+
+    const [showNavbar, setShowNavbar] = useState(true);
+    const prevScrollPos = useRef(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.scrollY;
+            setShowNavbar(prevScrollPos.current > currentScrollPos || currentScrollPos < 10);
+            prevScrollPos.current = currentScrollPos;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <div className="w-full bg-black/40 text-white fixed z-50">
+        <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-black/40 text-white fixed z-50 transition-all duration-300`}>
             <div className="max-w-6xl mx-auto py-4 px-4 flex items-center justify-between">
                 {/* Logo */}
                 <div className="text-2xl font-bold">LOGO</div>

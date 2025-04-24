@@ -1,47 +1,68 @@
+"use client"
 import Image from 'next/image';
-import React from 'react'
+import React, { useRef } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 
 function InternationalDestinations() {
   const destinations = [
     {
+      id: 1,
       name: 'Dubai',
       duration: '3N 2D',
       price: '₹20,000',
       image: '/dubai_1.jpeg',
     },
     {
+      id: 2,
       name: 'Bali',
       duration: '4N 3D',
       price: '₹35,000',
       image: '/bali_1.jpeg',
     },
     {
+      id: 3,
       name: 'Maldives',
       duration: '5N 4D',
       price: '₹25,000',
       image: '/maldives_1.jpeg',
     },
     {
+      id: 4,
       name: 'Singapore',
       duration: '4N 3D',
       price: '₹18,000',
       image: '/singapore_1.jpeg',
     },
     {
+      id: 5,
       name: 'Thailand',
       duration: '2N 3D',
       price: '₹12,000',
       image: '/thailand_1.jpeg',
     },
     {
+      id: 6,
       name: 'Vietnam',
       duration: '5N 6D',
       price: '₹30,000',
       image: '/vietnam_1.jpeg',
     },
   ];
+
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    const current = scrollRef.current;
+    if (current) {
+      const scrollAmount = 360;
+      current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  
 
   return (
     <div className="w-full py-10 px-4 mt-1">
@@ -51,8 +72,13 @@ function InternationalDestinations() {
         </h2>
 
         <div className="flex flex-nowrap relative mt-14">
-          <RiArrowDropDownLine className="text-6xl absolute rounded-full top-[40%] -left-16 transform text-white bg-red-500 border border-red-600 z-20 transition-transform duration-300 rotate-90" />
-          <div className='flex flex-nowrap relative gap-6 overflow-hidden'>{destinations.map((place, index) => (
+          <button
+            onClick={() => scroll('right')}
+            className="absolute -left-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform rotate-90"
+          >
+            <RiArrowDropDownLine />
+          </button>
+          <div ref={scrollRef} className='flex flex-nowrap relative gap-6 overflow-hidden'>{destinations.map((place, index) => (
             <div
               key={index}
               className="relative group w-[340px] shrink-0 h-[400px] rounded-lg overflow-hidden shadow-lg cursor-pointer"
@@ -74,7 +100,12 @@ function InternationalDestinations() {
             </div>
           ))}
           </div>
-          <RiArrowDropDownLine className="text-6xl absolute rounded-full top-[40%] -right-16 transform text-white bg-red-500 border border-red-600 z-10 transition-transform duration-300 -rotate-90" />
+          <button
+            onClick={() => scroll('left')}
+            className="absolute -right-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform -rotate-90"
+          >
+            <RiArrowDropDownLine />
+          </button>
         </div>
       </div>
     </div>
