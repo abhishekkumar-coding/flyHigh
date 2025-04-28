@@ -17,7 +17,7 @@ function IndiaDestinations() {
     { id: 6, name: 'Kashmir', duration: '5N 6D', price: '₹30,000', image: '/kashmire_1.jpeg' },
   ];
 
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef(null);
 
   const scroll = (direction) => {
     const { current } = scrollRef;
