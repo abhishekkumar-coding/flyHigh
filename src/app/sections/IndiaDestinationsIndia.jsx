@@ -1,8 +1,11 @@
 'use client';
-import "@/app/globals.css"
+
+import "@/app/globals.css";
 import Image from 'next/image';
 import { useRef } from 'react';
 import { RiArrowDropDownLine } from "react-icons/ri";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function IndiaDestinations() {
   const destinations = [
@@ -14,12 +17,12 @@ function IndiaDestinations() {
     { id: 6, name: 'Kashmir', duration: '5N 6D', price: '₹30,000', image: '/kashmire_1.jpeg' },
   ];
 
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction) => {
     const { current } = scrollRef;
     if (current) {
-      const scrollAmount = 360; // You can adjust this
+      const scrollAmount = 360;
       current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth',
@@ -27,9 +30,28 @@ function IndiaDestinations() {
     }
   };
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,   // Animate only once
+    threshold: 0.2       // Start when 20% of section is visible
+  });
+
+  const animationControls = useAnimation();
+
+  if (inView) {
+    animationControls.start({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2,
+      }
+    });
+  }
+
   return (
     <div className="w-full py-10 px-4 mt-10">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto" ref={ref}>
         <h2 className="text-3xl font-bold mb-8 text-left">
           Top-Rated Destinations in India
         </h2>
@@ -44,14 +66,17 @@ function IndiaDestinations() {
           </button>
 
           {/* Scrollable Container */}
-          <div
+          <motion.div
             ref={scrollRef}
             className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-12"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animationControls}
           >
             {destinations.map((destination) => (
-              <div
+              <motion.div
                 key={destination.id}
                 className="min-w-[340px] w-[400px] h-[400px] rounded-lg overflow-hidden shadow-lg relative group cursor-pointer"
+                whileHover={{ scale: 1.05 }}
               >
                 <Image
                   src={destination.image}
@@ -59,14 +84,14 @@ function IndiaDestinations() {
                   fill
                   className="object-cover transition duration-300 group-hover:scale-125"
                 />
-                <div className="absolute bottom-0 left-0 w-full flex flex-col items-start justify-center pl-5 text-white bg-black/60 backdrop-blur-xs h-28 text-center opacity-0 group-hover:opacity-100 transition duration-300">
+                <div className="absolute bottom-0 left-0 w-full flex flex-col items-start justify-center pl-5 text-white bg-black/20 backdrop-blur-xs h-28 text-center opacity-0 group-hover:opacity-100 transition duration-300">
                   <h3 className="text-3xl font-bold">{destination.name}</h3>
                   <p className="text-lg">{destination.duration}</p>
                   <p className="text-xl font-semibold">{destination.price}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Right Arrow */}
           <button

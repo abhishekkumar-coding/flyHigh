@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 
@@ -23,14 +24,14 @@ function Navbar() {
         <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-black/40 backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
             <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                 {/* Logo */}
-                <div className="text-2xl font-bold">LOGO</div>
+                <div className="text-2xl font-bold"><Link href="/">LOGO</Link></div>
 
                 {/* Navigation Links (hidden on small screens) */}
                 <ul className="hidden md:flex items-center justify-center space-x-8 text-[20px] font-semibold">
                     <li className="hover:text-yellow-400 cursor-pointer">
-                        <span>
-                            Trip Planner <sup className="text-red-400">New</sup>
-                        </span>
+                        <Link href="/trip-planner" className="flex items-center">
+                            Trip Planner <sup className="text-red-400 ml-1">New</sup>
+                        </Link>
                     </li>
                     <li className="group relative hover:text-yellow-400 cursor-pointer">
                         <div className="flex items-center justify-center">
@@ -93,9 +94,9 @@ function Navbar() {
 
 
 
-                    <li className="hover:text-yellow-400 cursor-pointer">Blogs</li>
+                    <li className="hover:text-yellow-400 cursor-pointer"><Link href="/blogs">Blogs</Link></li>
 
-                    <li className="hover:text-yellow-400 cursor-pointer">Contact Us</li>
+                    <li className="hover:text-yellow-400 cursor-pointer"><Link href="/contactus">Contact Us</Link></li>
                 </ul>
 
                 {/* Hamburger Menu (Visible on small screens) */}

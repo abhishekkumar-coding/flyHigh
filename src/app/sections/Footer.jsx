@@ -1,16 +1,30 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
-import { RiWhatsappFill } from "react-icons/ri";
-import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+import { motion } from 'framer-motion'
+import { RiWhatsappFill } from "react-icons/ri"
+import { FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa"
+import { IoMdMail } from "react-icons/io"
 
 function Footer() {
     return (
         <footer className="w-full bg-gray-100 text-gray-800 px-4 py-10 mt-10">
-            <div className="max-w-7xl mx-auto">
+            <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                className="max-w-7xl mx-auto"
+            >
                 <div className="flex flex-col md:flex-row flex-wrap gap-10 justify-between">
                     {/* Logo & Contact Info */}
-                    <div className="flex-1 min-w-[250px]">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="flex-1 min-w-[250px]"
+                    >
                         <div className="mb-6">
                             <h1 className="text-3xl sm:text-4xl font-bold">LOGO</h1>
                         </div>
@@ -34,10 +48,16 @@ function Footer() {
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Link Sections */}
-                    <div className="flex flex-wrap gap-10 justify-between flex-1 min-w-[250px]">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                        viewport={{ once: true }}
+                        className="flex flex-wrap gap-10 justify-between flex-1 min-w-[250px]"
+                    >
                         {/* Quick Links */}
                         <div className="min-w-[150px]">
                             <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
@@ -79,14 +99,20 @@ function Footer() {
                                 <li>Bali</li>
                             </ul>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Bottom Text */}
-                <div className="mt-10 border-t pt-6 text-center text-sm text-gray-500">
+                <motion.div 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    className="mt-10 border-t pt-6 text-center text-sm text-gray-500"
+                >
                     © {new Date().getFullYear()} All Rights Reserved | Designed by Abhi Web Dev
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </footer>
     )
 }

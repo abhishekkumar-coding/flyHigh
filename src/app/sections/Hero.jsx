@@ -1,52 +1,76 @@
+'use client';
+
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { IoMdSearch } from "react-icons/io";
 
-
+const sentences = [
+    "Exploring Places, Connecting People",
+    "Discover New Horizons, Embrace Adventure",
+    "Uncover Hidden Gems, Share the Journey",
+    "Venture Beyond the Ordinary, Connect with Locals",
+    "Experience the World, Build Connections",
+    "Explore Diverse Destinations, Meet New Faces",
+    "Travel Far, Make Memories, Connect with Cultures",
+    "Journey to the World's Wonders, Unite with Travelers",
+    "Adventure Awaits, Connections Await You",
+    "Wander the Globe, Build Lasting Friendships"
+];
 
 function Hero() {
+    const [currentSentence, setCurrentSentence] = useState(0);
 
-    const sentences = [
-        "Exploring Places, Connecting People",
-        "Discover New Horizons, Embrace Adventure",
-        "Uncover Hidden Gems, Share the Journey",
-        "Venture Beyond the Ordinary, Connect with Locals",
-        "Experience the World, Build Connections",
-        "Explore Diverse Destinations, Meet New Faces",
-        "Travel Far, Make Memories, Connect with Cultures",
-        "Journey to the World's Wonders, Unite with Travelers",
-        "Adventure Awaits, Connections Await You",
-        "Wander the Globe, Build Lasting Friendships"
-    ];
-
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSentence((prev) => (prev + 1) % sentences.length);
+        }, 3000); // Change sentence every 3 seconds
+        return () => clearInterval(interval);
+    }, []);
 
     return (
-        <div
-            className="w-full h-[500px] relative bg-cover bg-center flex flex-col justify-center items-center"
+        <section
+            className="w-full h-[90vh] relative flex items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: "url('/herobg.webp')" }}
         >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
-            <div className="flex flex-col items-center gap-4 justify-center text-white relative z-10">
-                <h1 className="text-4xl font-extrabold ">
-                    Making Travel Easy, Memorable & Magical
-                </h1>
-                <p className="text-2xl font-bold">{sentences[0]}</p>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-0" />
+            <div className="relative z-10 flex flex-col items-center text-center px-4">
 
-                <div className="flex items-center justify-between mt-10 text-xl font-semibold w-full max-w-xs sm:max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl rounded-4xl bg-white px-4 py-1 border-4 border-orange-300">
+                <motion.h1
+                    initial={{ opacity: 0, y: -50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1 }}
+                    className="text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-4xl"
+                >
+                    Make Your Journey Magical ✨
+                </motion.h1>
+
+                <motion.p
+                    key={currentSentence}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.7 }}
+                    className="text-lg md:text-2xl font-medium text-orange-300 mt-6 max-w-2xl"
+                >
+                    {sentences[currentSentence]}
+                </motion.p>
+
+                <motion.div
+                    initial={{ opacity: 0, width: 0 }}
+                    animate={{ opacity: 1, width : "100%" }}
+                    transition={{ delay: 0.5, duration: 0.8 }}
+                    className="flex items-center w-full max-w-md md:max-w-xl lg:max-w-2xl bg-white rounded-full px-4 py-2 mt-10 border-4 border-orange-400"
+                >
                     <input
                         type="text"
-                        name="destination"
-                        id="destination"
-                        className="text-black px-2 w-full focus:outline-none py-1 sm:px-3 sm:py-2"
                         placeholder='Search destination "Rajasthan"'
+                        className="flex-grow bg-transparent text-black px-3 py-2 focus:outline-none text-lg"
                     />
-                    <IoMdSearch className="text-xxl sm:text-4xl cursor-pointer text-black" />
-                </div>
-
+                    <IoMdSearch className="text-3xl text-black cursor-pointer" />
+                </motion.div>
             </div>
-            <div className="w-full">
-
-            </div>
-        </div>
-    )
+        </section>
+    );
 }
 
-export default Hero
+export default Hero;
