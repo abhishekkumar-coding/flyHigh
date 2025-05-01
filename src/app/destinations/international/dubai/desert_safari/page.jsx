@@ -1,6 +1,5 @@
 "use client"
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 import PackageHero from '@/app/components/PackageHero';
 import PackageItinery from '@/app/components/PackageItinery';
 import PackageInclusions from '@/app/components/PackageInclusions';
@@ -11,6 +10,23 @@ import PackagePolocies from '@/app/components/PackagePolocies';
 import EnquiryForm from '@/app/components/EnquiryForm';
 
 function Desert_Safari() {
+
+  const [showForm, setShowForm] = useState(false);
+
+  const onClose = () => {
+    setShowForm(false)
+    console.log("form closed")
+  }
+
+  const btnClick = () => {
+    setShowForm(true)
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowForm(true)
+    }, 3000)
+  }, [])
 
   const inclusions = [
     "Hotel Pickup & Drop",
@@ -85,7 +101,7 @@ function Desert_Safari() {
   return (
     <div className="w-full bg-gradient-to-br from-yellow-50 to-white">
       {/* Hero Section */}
-      <PackageHero />
+      <PackageHero btnClick={btnClick} />
 
       {/* Itinerary */}
       <PackageItinery />
@@ -102,13 +118,13 @@ function Desert_Safari() {
       <PackageFaqs faqs={faqs} />
 
       {/* Policies */}
-     <PackagePolocies policies={policies}/>
+      <PackagePolocies policies={policies} />
 
 
 
 
       {/* Booking Form */}
-      <EnquiryForm/>
+      {showForm && <EnquiryForm onClose={onClose} />}
 
     </div>
   );

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-function PackageHero() {
+function PackageHero({ btnClick }) {
     return (
         <>
             <section
@@ -12,11 +12,9 @@ function PackageHero() {
                 <div className="relative z-10 text-center text-white max-w-3xl px-4">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">Desert Safari Adventure</h1>
                     <p className="text-lg mb-6">Thrilling experience in the golden dunes of Dubai</p>
-                    <Link href="#form-section">
-                        <button className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold">
-                            Book Now
-                        </button>
-                    </Link>
+                    <button onClick={btnClick} className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full font-semibold">
+                        Send Enquiry
+                    </button>
                 </div>
             </section>
             {/* Short Description */}
