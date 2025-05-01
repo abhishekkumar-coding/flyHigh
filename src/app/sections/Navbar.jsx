@@ -30,7 +30,7 @@ function Navbar() {
                     <div className="text-2xl font-bold"><Link href="/">LOGO</Link></div>
 
                     {/* Desktop Nav */}
-                    <ul className="hidden items-center justify-center space-x-8 text-[20px] font-semibold">
+                    <ul className="hidden md:flex items-center justify-center space-x-8 text-[20px] font-semibold">
                         <li className="hover:text-yellow-400 cursor-pointer">
                             <Link href="/trip-planner" className="flex items-center">
                                 Trip Planner <sup className="text-red-400 ml-1">New</sup>
@@ -103,7 +103,7 @@ function Navbar() {
                     </ul>
 
                     {/* Hamburger */}
-                    <div className="">
+                    <div className="md:hidden">
                         <button
                             onClick={() => setMobileMenuOpen(true)}
                             className="text-4xl focus:outline-none"
