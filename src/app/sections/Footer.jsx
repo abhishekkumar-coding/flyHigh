@@ -18,7 +18,7 @@ function Footer() {
             >
                 <div className="flex flex-col md:flex-row flex-wrap gap-10 justify-between">
                     {/* Logo & Contact Info */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
@@ -31,27 +31,26 @@ function Footer() {
                         <div className="flex flex-col gap-4 text-sm">
                             <div className="flex items-center gap-3">
                                 <RiWhatsappFill className="text-xl text-green-600" />
-                                <span className="font-medium">+91 76681 96232</span>
+                                <span className="font-medium">+91 88844 48881</span>
                             </div>
                             <div className="flex items-center gap-3">
                                 <FaPhoneAlt className="text-xl text-blue-600" />
                                 <span className="font-medium">+91 76681 96232</span>
-                            </div>
+                                </div>
                             <div className="flex items-center gap-3">
                                 <IoMdMail className="text-xl text-red-500" />
-                                <span className="font-medium break-all">abhiwebdev2.0@gmail.com</span>
+                                <span className="font-medium break-all">flyhightour1@gmail.com</span>
                             </div>
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-xl text-yellow-600 mt-1" />
                                 <span className="font-medium max-w-xs">
-                                    H.Q. - 3rd Floor, Landmark Tower, Plot no-2, South City-1, Ashok Marg, Sector 41 Gurugram, Haryana 122001
-                                </span>
+                                    A-116 1St Floor, Vikas Marg, Veer Savarkar Block, Block U, Shakarpur, New Delhi, Delhi, 110092                                </span>
                             </div>
                         </div>
                     </motion.div>
 
                     {/* Link Sections */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.4 }}
@@ -103,7 +102,7 @@ function Footer() {
                 </div>
 
                 {/* Bottom Text */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.6 }}

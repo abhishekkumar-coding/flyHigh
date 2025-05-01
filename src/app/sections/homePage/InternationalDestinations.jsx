@@ -77,7 +77,7 @@ function InternationalDestinations() {
   };
 
   return (
-    <div className="w-full py-10 px-4 mt-1" ref={containerRef}>
+    <div className="w-full py-10 overflow-hidden px-4 mt-1" ref={containerRef}>
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold mb-8 text-left">
           Top International Destinations
@@ -89,8 +89,8 @@ function InternationalDestinations() {
         >
           {/* Left Arrow */}
           <button
-            onClick={() => scroll("right")}
-            className="absolute -left-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform rotate-90"
+            onClick={() => scroll("left")}
+            className="absolute -left-4 sm:-left-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform rotate-90"
           >
             <RiArrowDropDownLine />
           </button>
@@ -124,8 +124,8 @@ function InternationalDestinations() {
 
           {/* Right Arrow */}
           <button
-            onClick={() => scroll("left")}
-            className="absolute -right-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform -rotate-90"
+            onClick={() => scroll("right")}
+            className="absolute -right-5 sm:-right-14 top-1/2 -translate-y-1/2 z-10 text-5xl rounded-full bg-red-500 text-white border border-red-600 transition-transform -rotate-90"
           >
             <RiArrowDropDownLine />
           </button>

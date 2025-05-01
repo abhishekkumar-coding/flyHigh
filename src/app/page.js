@@ -7,7 +7,7 @@ import BestSellingPackages from './sections/homePage/BestSellingPackages'
 
 function page() {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Hero />
       <InternationalDestinations/>
       <IndiaDestinations />

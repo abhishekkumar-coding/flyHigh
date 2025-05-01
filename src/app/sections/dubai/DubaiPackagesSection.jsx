@@ -6,7 +6,7 @@ function DubaiPackagesSection({ pkgData }) {
         <div className="max-w-6xl mx-auto px-4 my-10">
             <div className="group flex flex-col md:flex-row bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
                 {/* Image */}
-                <div className="w-full md:w-1/3 h-64 md:h-auto overflow-hidden">
+                <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
                     <img
                         src={pkgData.image}
                         alt={pkgData.title}
