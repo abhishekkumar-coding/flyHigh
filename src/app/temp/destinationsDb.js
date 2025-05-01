@@ -36,5 +36,3 @@ export const destinations = [
     //   image: '/images/bali.jpg',
     // },
   ];
-
-  export {destinations}
