@@ -57,7 +57,7 @@ function Navbar() {
                             <div>
                                 <h3 className="font-semibold text-lg text-gray-700 mb-2">International</h3>
                                 <ul className="space-y-1 text-sm text-gray-600">
-                                    <li className="hover:text-yellow-400 cursor-pointer">Dubai</li>
+                                    <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/international/dubai"}>Dubai</Link></li>
                                     <li className="hover:text-yellow-400 cursor-pointer">Thailand</li>
                                     <li className="hover:text-yellow-400 cursor-pointer">Singapore</li>
                                     <li className="hover:text-yellow-400 cursor-pointer">Vietnam</li>
