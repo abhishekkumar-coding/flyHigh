@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import React from 'react'
 
-function DubaiPackagesSection({ pkgData }) {
+function DestinationPackages({ pkgData }) {
     return (
-        <div className="max-w-6xl mx-auto px-4 my-10">
+        <div className="max-w-6xl mx-auto px-4 my-10 transform transition-all duration-75 hover:-translate-y-3">
             <div className="group flex flex-col md:flex-row bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden border border-gray-100">
                 {/* Image */}
                 <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
@@ -59,4 +59,4 @@ const Feature = ({ icon, label }) => (
     </div>
 );
 
-export default DubaiPackagesSection
+export default DestinationPackages

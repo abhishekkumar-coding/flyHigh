@@ -10,12 +10,13 @@ import Link from "next/link";
 
 function IndiaDestinations() {
   const destinations = [
-    { id: 1, name: 'Goa', duration: '3 Days / 2 Nights', price: '₹20,000', image: '/goa_1.jpeg', link: "/destinations/domestic/Goa" },
-    { id: 2, name: 'Maldives', duration: '4 Days / 3 Nights', price: '₹35,000', image: '/maldives_1.jpeg', link: "/destinations/domestic/Maldives" },
-    { id: 3, name: 'Kerala', duration: '5 Days / 4 Nights', price: '₹25,000', image: '/kerala_1.jpeg', link: "/destinations/domestic/Kerala" },
-    { id: 4, name: 'Manali', duration: '4 Days / 3 Nights', price: '₹18,000', image: '/manali_1.jpeg', link: "/destinations/domestic/Manali" },
-    { id: 5, name: 'Jaipur', duration: '3 Days / 2 Nights', price: '₹12,000', image: '/jaipur_1.jpeg', link: "/destinations/domestic/Jaipur" },
-    { id: 6, name: 'Kashmir', duration: '6 Days / 5 Nights', price: '₹30,000', image: '/kashmire_1.jpeg' , link: "/destinations/domestic/Kashmir"},
+    { id: 1, name: 'Ayodhya', duration: '4 Days / 3 Nights', price: '₹20,000', image: '/ayodhya_card.jpeg' , link: "/destinations/domestic/ayodhya"}, 
+    { id: 2, name: 'Goa', duration: '3 Days / 2 Nights', price: '₹20,000', image: '/goa_1.jpeg', link: "/destinations/domestic/Goa" },
+    { id: 3, name: 'Maldives', duration: '4 Days / 3 Nights', price: '₹35,000', image: '/maldives_1.jpeg', link: "/destinations/domestic/Maldives" },
+    { id: 4, name: 'Kerala', duration: '5 Days / 4 Nights', price: '₹25,000', image: '/kerala_1.jpeg', link: "/destinations/domestic/Kerala" },
+    { id: 5, name: 'Manali', duration: '4 Days / 3 Nights', price: '₹18,000', image: '/manali_1.jpeg', link: "/destinations/domestic/Manali" },
+    { id: 6, name: 'Jaipur', duration: '3 Days / 2 Nights', price: '₹12,000', image: '/jaipur_1.jpeg', link: "/destinations/domestic/Jaipur" },
+    { id: 7, name: 'Kashmir', duration: '6 Days / 5 Nights', price: '₹30,000', image: '/kashmire_1.jpeg' , link: "/destinations/domestic/Kashmir"},
   ];
 
 

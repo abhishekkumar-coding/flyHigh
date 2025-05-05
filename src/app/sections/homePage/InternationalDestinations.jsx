@@ -27,7 +27,7 @@ function InternationalDestinations() {
       duration: "4N 3D",
       price: "₹35,000",
       image: "/bali_1.jpeg",
-      link: "/destinations/international/Bali",
+      link: "/destinations/international/bali",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ function InternationalDestinations() {
       duration: "5N 4D",
       price: "₹25,000",
       image: "/maldives_1.jpeg",
-      link: "/destinations/international/Maldives",
+      link: "/destinations/international/maldive",
     },
     {
       id: 4,
@@ -45,6 +45,7 @@ function InternationalDestinations() {
       image: "/singapore_1.jpeg",
       link: "/destinations/international/Singapore",
     },
+
     {
       id: 5,
       name: "Thailand",

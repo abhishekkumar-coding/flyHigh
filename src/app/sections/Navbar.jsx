@@ -48,6 +48,7 @@ function Navbar() {
                                 <div className="mb-4">
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">Domestic</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
+                                        <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/domestic/ayodhya"}>Ayodhya</Link></li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Goa</li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Kerala</li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Ladakh</li>
@@ -61,10 +62,10 @@ function Navbar() {
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">International</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
                                         <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/international/dubai"}>Dubai</Link></li>
+                                        <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/international/maldive"}>Maldive</Link></li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Thailand</li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Singapore</li>
                                         <li className="hover:text-yellow-400 cursor-pointer">Vietnam</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Maldives</li>
                                     </ul>
                                 </div>
                             </div>
