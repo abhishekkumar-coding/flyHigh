@@ -48,6 +48,26 @@ function page() {
             price: 2000,
             duration: "3 Nights",
             link : "/destinations/international/maldive/maldive_package1",
+        },
+        {
+            id: 2,
+            image: "/maldive_card2.jpeg",
+            title: "Silver Luxury Escape to Medhufushi Island Resort",
+            description: "Enjoy a 3-night all-inclusive stay at 5★ Medhufushi Island Resort with transfers, drinks, excursions & honeymoon perks &ndash; from ₹49,999 pp.",
+            amenities: ["Hotel", "Meal", "Wi-Fi", "Cab"],
+            price: 49999,
+            duration: "4 days / 3 nights ",
+            link : "/destinations/international/maldive/maldive_package2",
+        },
+        {
+            id: 3,
+            image: "/maldive_card3.jpeg",
+            title: "Luxury Stay at Oblu Xperience Ailafushi, Maldives",
+            description: "Enjoy a 3-night stay at 5★ Oblu Xperience Ailafushi starting at ₹52,999 pp. Includes return speedboat transfers, daily meals, fitness centre, and more",
+            amenities: ["Hotel", "Meal", "Wi-Fi", "Cab"],
+            price: 52999,
+            duration: "4 days / 3 nights ",
+            link : "/destinations/international/maldive/maldive_package3",
         }
     ]
 

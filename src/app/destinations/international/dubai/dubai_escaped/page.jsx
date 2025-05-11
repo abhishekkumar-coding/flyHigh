@@ -30,7 +30,7 @@ function dubai_escaped() {
 
   const heroText = {
     title: "Dubai Escapade: Adventure, Luxury & Skyline Views!",
-    image: "/dubai_imgs/desert_safari_1.jpeg",
+    image: "/dubai_pkg_2_bg.jpeg",
     description: "4 nights of luxury in Dubai with iconic views, thrilling desert safari, Burj Khalifa visit, dhow cruise dinner, and seamless visa & transfers.",
     title2: "Dubai Delight: 4N Tour with Iconic Experiences",
     description2: "Stay 4 nights in a 4★ hotel with Marina Dhow Cruise, Dubai city tour, Burj Khalifa, desert safari with BBQ dinner, UAE visa, and private airport transfers.",

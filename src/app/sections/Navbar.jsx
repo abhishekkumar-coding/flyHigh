@@ -4,11 +4,22 @@ import Link from 'next/link';
 import React, { useEffect, useRef, useState } from 'react'
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoCloseOutline } from "react-icons/io5";
+import Image from 'next/image';
 
 function Navbar() {
     const [showNavbar, setShowNavbar] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [destinationDropdownOpen, setDestinationDropdownOpen] = useState(false);
+    const [specializedTripDropdownOpen, setSpecializedTripDropdownOpen] = useState(false);
     const prevScrollPos = useRef(0);
+
+    const handleDestinationDropdownToggle = () => {
+        setDestinationDropdownOpen(!destinationDropdownOpen);
+    }
+
+    const handleSpecializedTripDropdownToggle = () => {
+        setSpecializedTripDropdownOpen(!specializedTripDropdownOpen);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -24,26 +35,36 @@ function Navbar() {
     return (
         <>
             {/* Desktop + Mobile Navbar */}
-            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-black/40 backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
+            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-white/40 backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
                 <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                     {/* Logo */}
-                    <div className="text-2xl font-bold"><Link href="/">LOGO</Link></div>
+                    <div className="text-2xl font-bold h-14">
+                        <Link href="/">
+                            <Image
+                                src="/FlyHigh_logo.png"
+                                alt="FlyHigh Logo"
+                                width={70}
+                                height={20}
+                                className="object-contain"
+                            />
+                        </Link>
+                    </div>
 
                     {/* Desktop Nav */}
                     <ul className="hidden md:flex items-center justify-center space-x-8 text-[20px] font-semibold">
                         <li className="hover:text-yellow-400 cursor-pointer">
                             <Link href="/trip-planner" className="flex items-center">
-                                Trip Planner <sup className="text-red-400 ml-1">New</sup>
+                                Mice
                             </Link>
                         </li>
-                        <li className="group relative hover:text-yellow-400 cursor-pointer">
+                        <li onClick={handleDestinationDropdownToggle} className="group relative hover:text-yellow-400 cursor-pointer">
                             <div className="flex items-center justify-center">
                                 <span>Destination</span>
-                                <RiArrowDropDownLine className="text-3xl transform transition-transform duration-300 group-hover:-rotate-180" />
+                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 ${destinationDropdownOpen ? "-rotate-180" : ""}`} />
                             </div>
 
                             {/* Dropdown Menu */}
-                            <div className="absolute flex items-start justify-between top-full left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 ease-in-out">
+                            <div className={`absolute flex items-start justify-between top-full left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 scale-95 opacity-0 pointer-events-none transition-all duration-300 ease-in-out ${destinationDropdownOpen ? "opacity-100 scale-100" : "hidden"}`}>
                                 {/* Domestic */}
                                 <div className="mb-4">
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">Domestic</h3>
@@ -72,18 +93,17 @@ function Navbar() {
                         </li>
 
 
-                        <li className="relative group hover:text-yellow-400 cursor-pointer">
+                        <li onClick={handleSpecializedTripDropdownToggle} className="relative group hover:text-yellow-400 cursor-pointer">
                             {/* Parent Wrapper with group */}
                             <div className="flex items-center justify-center">
                                 <span>Specialized Trip</span>
-                                <RiArrowDropDownLine className="text-3xl transform transition-transform duration-300 group-hover:-rotate-180" />
+                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 ${specializedTripDropdownOpen ? "-rotate-180" : ""}`} />
                             </div>
 
                             {/* Dropdown - placed inside the group so hover works on both link & dropdown */}
-                            <div className="absolute top-full left-0 mt-2 bg-white shadow-md p-4 w-72 rounded-md z-50 
+                            <div className={`absolute top-full left-0 mt-2 bg-white shadow-md p-4 w-72 rounded-md z-50 
                   opacity-0 scale-95 pointer-events-none 
-                  group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto 
-                  transition-all duration-300 ease-in-out">
+                  transition-all duration-300 ease-in-out ${specializedTripDropdownOpen ? "opacity-100 scale-100" : "hidden"}`}>
                                 <ul className="space-y-2 text-sm text-gray-600">
                                     <li className="hover:text-yellow-500 cursor-pointer">Honeymoon Trips</li>
                                     <li className="hover:text-yellow-500 cursor-pointer">Adventure Tours</li>
