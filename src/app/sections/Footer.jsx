@@ -25,17 +25,23 @@ function Footer() {
                         viewport={{ once: true }}
                         className="flex-1 min-w-[250px]"
                     >
-                        <div className="mb-6">
-                            <h1 className="text-3xl sm:text-4xl font-bold">LOGO</h1>
+                        <div className="mb-4">
+                            <Image
+                                src="/FlyHigh_logo.png"
+                                alt="Logo"
+                                width={100}
+                                height={50}
+                                className="object-contain"
+                            />
                         </div>
                         <div className="flex flex-col gap-4 text-sm">
                             <div className="flex items-center gap-3">
                                 <RiWhatsappFill className="text-xl text-green-600" />
-                                <span className="font-medium">+91 88844 48881</span>
+                                <span className="font-medium">+91-701-167-0923</span>
                             </div>
                             <div className="flex items-center gap-3">
                                 <FaPhoneAlt className="text-xl text-blue-600" />
-                                <span className="font-medium">+91 76681 96232</span>
+                                <span className="font-medium">+91-701-167-0923</span>
                                 </div>
                             <div className="flex items-center gap-3">
                                 <IoMdMail className="text-xl text-red-500" />

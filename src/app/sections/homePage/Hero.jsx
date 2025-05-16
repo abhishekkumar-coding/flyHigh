@@ -30,7 +30,7 @@ function Hero() {
     return (
         <section
             className="w-full h-[90vh] relative flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: "url('/home_page_bg.jpeg')" }}
+            style={{ backgroundImage: "url('/homepage/home_page_bg.jpeg')" }}
         >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-0" />
             <div className="relative z-10 flex flex-col items-center text-center px-4">

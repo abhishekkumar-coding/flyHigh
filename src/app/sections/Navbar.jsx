@@ -35,15 +35,15 @@ function Navbar() {
     return (
         <>
             {/* Desktop + Mobile Navbar */}
-            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full bg-white/40 backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
+            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
                 <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                     {/* Logo */}
-                    <div className="text-2xl font-bold h-14">
+                    <div className="text-2xl font-bold h-18 mb-5">
                         <Link href="/">
                             <Image
                                 src="/FlyHigh_logo.png"
                                 alt="FlyHigh Logo"
-                                width={70}
+                                width={120}
                                 height={20}
                                 className="object-contain"
                             />
@@ -136,7 +136,7 @@ function Navbar() {
             </div>
 
             {/* Mobile Full-Screen Menu */}
-            <div className={`${mobileMenuOpen ? "translate-x-0" : "-translate-x-[550px]"} fixed w-full md:max-w-1/3 inset-0 z-50 bg-white text-black p-6 overflow-y-auto transition-translate duration-200 transform`}>
+            <div className={`${mobileMenuOpen ? "translate-x-0" : "-translate-x-[1000px]"} fixed w-full md:max-w-1/3 inset-0 z-50 bg-white text-black p-6 overflow-y-auto transition-translate duration-200 transform`}>
                 <div className="flex justify-between items-center mb-6">
                     <div className="text-2xl font-bold">LOGO</div>
                     <button
