@@ -11,7 +11,7 @@ import Link from "next/link";
 function IndiaDestinations() {
   const destinations = [
     { name: 'Ayodhya', image: '/ayodhya_card.jpeg', link: "/destinations/domestic/ayodhya" },
-    { name: 'Goa', image: '/goa_1.jpeg', link: "/destinations/domestic/Goa" },
+    { name: 'Goa', image: '/goa_1.jpeg', link: "/destinations/domestic/goa" },
     { name: 'Kerala', image: '/kerala_1.jpeg', link: "/destinations/domestic/Kerala" },
     { name: 'Manali', image: '/manali_1.jpeg', link: "/destinations/domestic/Manali" },
     { name: 'Jaipur', image: '/jaipur_1.jpeg', link: "/destinations/domestic/Jaipur" },

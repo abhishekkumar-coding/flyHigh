@@ -1,4 +1,5 @@
 "use  client"
+import Image from 'next/image';
 import React from 'react'
 
 function page() {
@@ -6,10 +7,18 @@ function page() {
         <div className='w-full bg-gray-50 text-gray-800'>
           {/* Hero section */}
           <section className='bg-[url("/contact-hero.jpg")] bg-cover bg-center h-[400px] flex items-center justify-center text-white relative'>
-            <div className='absolute inset-0 bg-black/60'></div>
+            <div className='absolute inset-0 bg-black/60'>
+            <Image
+                src='/contactUs.jpeg'
+                alt='Contact Us'
+                layout='fill'
+                objectFit='cover'
+                className='opacity-50'
+            />
+            </div>
             <div className='relative z-10 text-center'>
               <h1 className='text-4xl font-bold'>Contact Us</h1>
-              <p className='mt-2 text-lg'>We’re here to help you plan your perfect trip</p>
+              <p className='mt-2 text-lg'>We&rsquo;re here to help you plan your perfect trip</p>
             </div>
           </section>
       
@@ -39,11 +48,11 @@ function page() {
               {/* Contact Details */}
               <div className='space-y-6'>
                 <h2 className='text-2xl font-bold'>Get in Touch</h2>
-                <p className='text-gray-600'>Reach out to us with any questions or feedback. We’d love to hear from you.</p>
+                <p className='text-gray-600'>Reach out to us with any questions or feedback. We&rsquo;d love to hear from you.</p>
                 <div className='space-y-4'>
-                  <p><strong>Phone:</strong> +91 98765 43210</p>
-                  <p><strong>Email:</strong> hello@travelbuddy.com</p>
-                  <p><strong>Address:</strong> 123 Wander Lane, Explore City, World</p>
+                  <p><strong>Phone:</strong> +91-701-167-0923 </p>
+                  <p><strong>Email:</strong> flyhightour1@gmail.com</p>
+                  <p><strong>Address:</strong> A-116 1St Floor, Vikas Marg, Veer Savarkar Block, Block U, Shakarpur, New Delhi, Delhi, 110092</p>
                 </div>
               </div>
             </div>

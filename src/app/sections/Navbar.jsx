@@ -35,7 +35,7 @@ function Navbar() {
     return (
         <>
             {/* Desktop + Mobile Navbar */}
-            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full backdrop-blur-sm text-white fixed z-50 transition-all duration-300`}>
+            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full text-white fixed z-50 transition-all duration-300`}>
                 <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="text-2xl font-bold h-18 mb-5">
