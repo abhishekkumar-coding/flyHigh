@@ -43,7 +43,7 @@ function Navbar() {
                             <Image
                                 src="/FlyHigh_logo.png"
                                 alt="FlyHigh Logo"
-                                width={120}
+                                width={100}
                                 height={20}
                                 className="object-contain"
                             />
@@ -51,9 +51,9 @@ function Navbar() {
                     </div>
 
                     {/* Desktop Nav */}
-                    <ul className="hidden md:flex items-center justify-center space-x-8 text-[20px] font-semibold">
+                    <ul className="hidden md:flex items-center justify-center space-x-14 text-xl font-medium">
                         <li className="hover:text-yellow-400 cursor-pointer">
-                            <Link href="/trip-planner" className="flex items-center">
+                            <Link href="/mice" className="flex items-center">
                                 Mice
                             </Link>
                         </li>
@@ -120,7 +120,12 @@ function Navbar() {
 
                         <li className="hover:text-yellow-400 cursor-pointer"><Link href="/blogs">Blogs</Link></li>
 
-                        <li className="hover:text-yellow-400 cursor-pointer"><Link href="/contactus">Contact Us</Link></li>
+                        <li className="hover:text-yellow-400 cursor-pointer"> <Link
+                            href="/contactus"
+                            className="block bg-white text-green-600 rounded-lg px-4 py-2 hover:text-yellow-500 hover:bg-gray-100 transition duration-300"
+                        >
+                            Contact Us
+                        </Link></li>
                     </ul>
 
                     {/* Hamburger */}

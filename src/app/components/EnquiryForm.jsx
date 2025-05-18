@@ -1,122 +1,83 @@
-'use client';
+import React from 'react';
+import { ImCross } from "react-icons/im";
 
-import React, { useEffect, useState } from 'react';
 
-const EnquiryForm = () => {
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    destination: '',
-    travelers: '',
-    date: '',
-    message: '',
-  });
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowForm(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Enquiry submitted successfully!');
-    setShowForm(false);
-  };
-
-  if (!showForm) return null;
-
+function EnquiryForm({closeForm}) {
   return (
-    <div className="fixed inset-0 z-50 bg-black/30 flex items-center justify-center backdrop-blur-sm">
-      <div className="relative w-[95%] max-w-md p-6 bg-white rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.2)] border border-gray-200">
-        {/* Close Icon */}
-        <button
-          onClick={() => setShowForm(false)}
-          className="absolute top-4 right-4 text-gray-400 hover:text-red-500 text-lg font-bold"
-        >
-          ×
+    <div className="w-full  mx-auto flex flex-col md:flex-row justify-center m-0 p-6 lg:p-16">
+
+      {/* Left Section */}
+      <div className="w-full max-w-xl lg:max-w-lg bg-gradient-to-br from-orange-200 to-white text-white shadow-xl rounded-xl m-0 p-6 flex flex-col items-start mb-8 lg:mb-0  md:rounded-tr-none mt-5 md:rounded-br-none md:h-[66vh]">  
+        <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
+          ✈ FlyHighourz Awaits You
+        </h2>
+        <p className="text-gray-700">
+          Fill out the form and let us tailor your travel experience. Smooth bookings, affordable trips, lasting memories.
+        </p>
+      </div>
+
+      {/* Right Section - Form */}
+      <form className="w-full max-w-xl relative bg-white shadow-2xl rounded-xl p-8 flex flex-col m-0 gap-6">
+
+        {/* Close Button */}  
+        <button className="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onClick={closeForm}>
+          <ImCross size={24} />
         </button>
 
-        <h2 className="text-xl font-semibold text-center text-gray-800 mb-5">
-          Travel Enquiry
-        </h2>
+        <h2 className="text-2xl font-bold text-gray-800 text-center">Plan Your Trip</h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4 text-sm">
+        {/* Full Name */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Full Name</label>
           <input
             type="text"
-            name="name"
-            placeholder="Full Name"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.name}
-            onChange={handleChange}
-            required
+            placeholder="Your Name"
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
+        </div>
+
+        {/* Email Address */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Email Address</label>
           <input
             type="email"
-            name="email"
-            placeholder="Email Address"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.email}
-            onChange={handleChange}
-            required
+            placeholder="you@example.com"
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Phone Number"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-          />
+        </div>
+
+        {/* Phone Number */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Phone Number</label>
           <input
             type="text"
-            name="destination"
-            placeholder="Destination"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.destination}
-            onChange={handleChange}
+            placeholder="+91 9876543210"
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
+        </div>
+
+        {/* Destination */}
+        <div className="flex flex-col">
+          <label className="text-gray-700 mb-1">Destination</label>
           <input
-            type="number"
-            name="travelers"
-            placeholder="No. of Travelers"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.travelers}
-            onChange={handleChange}
+            type="text"
+            placeholder="Dubai, Goa..."
+            className="p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
-          <input
-            type="date"
-            name="date"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.date}
-            onChange={handleChange}
-          />
-          <textarea
-            name="message"
-            placeholder="Additional Message"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md resize-none h-24 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition"
-            value={formData.message}
-            onChange={handleChange}
-          />
+        </div>
+
+        {/* Submit Button */}
+        <div>
           <button
             type="submit"
-            className="w-full py-2 bg-yellow-400 hover:bg-yellow-500 text-white font-medium rounded-md transition"
+            className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-md transition duration-300"
           >
             Submit Enquiry
           </button>
-        </form>
-      </div>
+        </div>
+      </form> 
     </div>
   );
-};
+}
 
 export default EnquiryForm;

@@ -7,8 +7,7 @@ import TopDestinations from './sections/homePage/TopDestinations'
 import TopDubaipackages from './sections/homePage/InternationalDestinations'
 import DiscoverByInterest from './sections/homePage/DiscoverByInterest'
 import WhyChooseUs from './sections/homePage/WhyChooseUs'
-import BannerSlider from './sections/homePage/BannerSlider'
-// import InDemandDestinationsIndia from './sections/InDemandDestinations'
+// import EnquiryForm from './components/EnquiryForm'
 
 function page() {
   return (
