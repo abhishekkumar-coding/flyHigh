@@ -9,7 +9,7 @@ function EnquiryForm({closeForm}) {
       {/* Left Section */}
       <div className="w-full max-w-xl lg:max-w-lg bg-gradient-to-br from-orange-200 to-white text-white shadow-xl rounded-xl m-0 p-6 flex flex-col items-start mb-8 lg:mb-0  md:rounded-tr-none mt-5 md:rounded-br-none md:h-[66vh]">  
         <h2 className="text-3xl font-extrabold text-gray-800 mb-4">
-          ✈ FlyHighourz Awaits You
+          ✈ FlyHighour Awaits You
         </h2>
         <p className="text-gray-700">
           Fill out the form and let us tailor your travel experience. Smooth bookings, affordable trips, lasting memories.

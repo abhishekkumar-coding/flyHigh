@@ -5,7 +5,7 @@ import React from 'react'
 
 function page() {
     const heroText = {
-        image: "/bali_bg.jpeg",
+        image: "/bali/bali_bg_1.png",
         title: "Discover the Magic of Bali",
         description:
             "Embark on an unforgettable journey to Bali, where lush landscapes, stunning beaches, and rich culture await. From serene temples to thrilling water sports, Bali offers a paradise for every traveler.",
@@ -15,7 +15,7 @@ function page() {
     const baliPackages = [
         {
             id: 1,
-            image: "/bali_card_1.jpeg",
+            image: "/bali/bali_card_1.jpeg",
             title: "Enchanting Bali Getaway &ndash; 6 Nights / 7 Days",
             description:
                 "Experience Bali's beauty with flights, 6-night stay, breakfast, scenic tours, water sports, and iconic landmarks like Tanah Lot and Ubud.",

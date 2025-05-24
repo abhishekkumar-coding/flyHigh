@@ -35,7 +35,7 @@ function Navbar() {
     return (
         <>
             {/* Desktop + Mobile Navbar */}
-            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full text-white fixed z-50 transition-all duration-300`}>
+            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full text-white fixed z-30 transition-all duration-300`}>
                 <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="text-2xl font-bold h-18 mb-5">
@@ -64,17 +64,32 @@ function Navbar() {
                             </div>
 
                             {/* Dropdown Menu */}
-                            <div className={`absolute flex items-start justify-between top-full left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 scale-95 opacity-0 pointer-events-none transition-all duration-300 ease-in-out ${destinationDropdownOpen ? "opacity-100 scale-100" : "hidden"}`}>
+                            <div className={`absolute flex items-start justify-between top-full left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 scale-95 opacity-0 transition-all duration-300 ease-in-out ${destinationDropdownOpen ? "opacity-100 scale-100" : "hidden pointer-events-none"}`}>
                                 {/* Domestic */}
                                 <div className="mb-4">
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">Domestic</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
-                                        <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/domestic/ayodhya"}>Ayodhya</Link></li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Goa</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Kerala</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Ladakh</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Kashmir</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">North East</li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/ayodhya">Ayodhya</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/goa">Goa</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/kerala">Kerala</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/ladakh">Ladakh</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/kashmir">Kashmir</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/manali">Manali</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/domestic/north-east">North East</Link>
+                                        </li>
                                     </ul>
                                 </div>
 
@@ -82,11 +97,21 @@ function Navbar() {
                                 <div>
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">International</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
-                                        <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/international/dubai"}>Dubai</Link></li>
-                                        <li className="hover:text-yellow-400 cursor-pointer"><Link href={"/destinations/international/maldive"}>Maldive</Link></li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Thailand</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Singapore</li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">Vietnam</li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/international/dubai">Dubai</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/international/maldive">Maldive</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/international/thailand">Thailand</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/international/singapore">Singapore</Link>
+                                        </li>
+                                        <li className="hover:text-yellow-400 cursor-pointer">
+                                            <Link href="/destinations/international/vietnam">Vietnam</Link>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -101,9 +126,8 @@ function Navbar() {
                             </div>
 
                             {/* Dropdown - placed inside the group so hover works on both link & dropdown */}
-                            <div className={`absolute top-full left-0 mt-2 bg-white shadow-md p-4 w-72 rounded-md z-50 
-                  opacity-0 scale-95 pointer-events-none 
-                  transition-all duration-300 ease-in-out ${specializedTripDropdownOpen ? "opacity-100 scale-100" : "hidden"}`}>
+                            <div className={`absolute top-full left-0 mt-2 bg-white shadow-md p-4 w-72 rounded-md z-50 opacity-0 scale-95
+                  transition-all duration-300 ease-in-out ${specializedTripDropdownOpen ? "opacity-100 scale-100" : "hidden pointer-events-none"}`}>
                                 <ul className="space-y-2 text-sm text-gray-600">
                                     <li className="hover:text-yellow-500 cursor-pointer">Honeymoon Trips</li>
                                     <li className="hover:text-yellow-500 cursor-pointer">Adventure Tours</li>
@@ -120,12 +144,13 @@ function Navbar() {
 
                         <li className="hover:text-yellow-400 cursor-pointer"><Link href="/blogs">Blogs</Link></li>
 
-                        <li className="hover:text-yellow-400 cursor-pointer"> <Link
-                            href="/contactus"
-                            className="block bg-white text-green-600 rounded-lg px-4 py-2 hover:text-yellow-500 hover:bg-gray-100 transition duration-300"
-                        >
-                            Contact Us
-                        </Link></li>
+                        <li className="hover:text-yellow-400 cursor-pointer">
+                            <Link
+                                href="/contactus"
+                                className="block bg-orange-500 text-white rounded-lg px-4 py-2 hover:text-gray-200 hover:bg-orange-600 transition duration-300"
+                            >
+                                Contact Us
+                            </Link></li>
                     </ul>
 
                     {/* Hamburger */}

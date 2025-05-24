@@ -86,7 +86,7 @@ function Hero() {
             </motion.div>
             <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-4">
                 <h1 className="text-5xl md:text-8xl font-bold text-white max-w-4xl">
-                    Discover the world with <span className="text-orange-400">FlyHighTourz</span>
+                    Discover the world with <span className="text-orange-400">Fly High Tour</span>
                 </h1>
                 <p className="text-lg md:text-2xl text-orange-300 mt-4 max-w-xl">
                     Best packages for domestic and international travel

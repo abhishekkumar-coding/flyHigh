@@ -7,7 +7,7 @@ function DestinationHero({ heroText }) {
       style={{ backgroundImage: `url(${heroText.image})` }}
     >
       {/* Dark Gradient Overlay */}
-      <div className="w-full h-full absolute top-0 left-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60"></div>
+      <div className="w-full h-full absolute top-0 left-0"></div>
 
       {/* Text Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">

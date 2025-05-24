@@ -1,12 +1,53 @@
 import DestinationHero from '@/app/components/DestinationHero';
 import DestinationPackages from '@/app/components/DestinationPackages';
-import { dubaiPackages } from '@/app/data/packages/dubaiPackages';
 import React from 'react';
 import DestinationFaqs from '@/app/components/DestinationFaqs';
 
 function Dubai() {
+  const dubaiPackages = [
+    {
+  id: 1,
+  image: "/dubai/dubai_pkg_card_1.png",
+  title: "Dubai Delights: 5D/4N",
+  duration: "5 Days / 4 Nights",
+  isCustomizable: true,
+  actualPrice: 30999,
+  olderPrice: 35999,
+  discount: 0,
+  hotelName: "Grand Excelsior Hotel Bur Dubai",
+  hotelStars: 4,
+  link: "/destinations/international/dubai/dubai_package_1"
+},
+{
+  id: 2,
+  image: "/dubai/dubai_pkg_card_2.png",
+  title: "Escape to Dubai",
+  duration: "5 Days / 4 Nights",
+  isCustomizable: true,
+  actualPrice: 21999,
+  olderPrice: 24999,
+  discount: 0,
+  hotelName: "Citymax Hotel Bur Dubai",
+  hotelStars: 3,
+  link: "/destinations/international/dubai/dubai_package_2"
+}
+
+  ];
+
+  const additionalPackages = [
+    {
+      id: 2,
+      image: "/dubai/burj_1.jpeg",
+      title: "Dubai Escapade: Adventure, Luxury & Skyline Views!",
+      description: "S4 nights of luxury in Dubai with iconic views, thrilling desert safari, Burj Khalifa visit, dhow cruise dinner, and seamless visa & transfers.",
+      amenities: ["Entry Ticket", "Guide", "Wi-Fi"],
+      price: 21999,
+      link: "/destinations/international/dubai/dubai_adventures"
+    }
+  ];
+
   const heroText = {
-    image: "/dubai_imgs/dubai_bg_1.jpeg",
+    image: "/dubai/dubai_hero_bg_1.png",
     title: "Discover the Magic of Dubai",
     description:
       "Experience the perfect blend of tradition and modern marvels in the heart of the UAE. From towering skyscrapers to golden deserts, Dubai offers an unforgettable adventure.",

@@ -71,8 +71,8 @@ export default function MicePage() {
         <h2 className="text-3xl font-bold text-center mb-8">Why Choose Fly High Tour?</h2>
         <ul className="space-y-4 text-gray-700">
           {[
-            "Tailored Solutions &ndash; Customized plans that meet your unique objectives.",
-            "Global Reach &ndash; Access to elite venues and services worldwide.",
+            "Tailored Solutions Customized plans that meet your unique objectives.",
+            "Global Reach Access to elite venues and services worldwide.",
             "Technology-Driven &ndash; Real-time coordination and smart tools.",
             "Experienced Team &ndash; Deep MICE industry expertise.",
             "Cost Efficiency &ndash; Competitive pricing with premium quality.",
@@ -103,9 +103,9 @@ export default function MicePage() {
 
       {/* Call to Action */}
       <section className="bg-orange-500 py-16 text-white text-center px-6">
-        <h2 className="text-3xl font-bold mb-4">Let’s Elevate Your Next Corporate Event</h2>
+        <h2 className="text-3xl font-bold mb-4">Let&apos;s Elevate Your Next Corporate Event</h2>
         <p className="mb-6 text-lg">
-          Partner with Fly High Tour to turn your corporate vision into reality. We’re with you—every step of the journey.
+          Partner with Fly High Tour to turn your corporate vision into reality. We&apos;re with you—every step of the journey.
         </p>
         <button className="px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition">
           Contact Us Now

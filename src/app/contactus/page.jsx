@@ -38,6 +38,10 @@ function page() {
                     <input type='email' placeholder='you@example.com' className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
                   </div>
                   <div>
+                    <label className='block font-semibold mb-2'>Phone Number</label>
+                    <input type='text' placeholder='Your Number' className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500' />
+                  </div>
+                  <div>
                     <label className='block font-semibold mb-2'>Message</label>
                     <textarea rows='5' placeholder='Write your message...' className='w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'></textarea>
                   </div>
