@@ -9,17 +9,60 @@ import Image from 'next/image';
 function Navbar() {
     const [showNavbar, setShowNavbar] = useState(true);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [destinationDropdownOpen, setDestinationDropdownOpen] = useState(false);
-    const [specializedTripDropdownOpen, setSpecializedTripDropdownOpen] = useState(false);
+    const [BgColor, setBgColor] = useState(false)
     const prevScrollPos = useRef(0);
 
-    const handleDestinationDropdownToggle = () => {
-        setDestinationDropdownOpen(!destinationDropdownOpen);
-    }
+    // const handleDestinationDropdownToggle = (e) => {
+    //     e.stopPropagation();
+    //     setDestinationDropdownOpen(!destinationDropdownOpen);
+    // }
 
-    const handleSpecializedTripDropdownToggle = () => {
-        setSpecializedTripDropdownOpen(!specializedTripDropdownOpen);
-    }
+    // useEffect(() => {
+    //     const handleClickOutside = (event) => {
+    //         if (destRef.current && !destRef.current.contains(event.target)) {
+    //             setDestinationDropdownOpen(false);
+    //         }
+    //         if (specializedRef.current && !specializedRef.current.contains(event.target)) {
+    //             setSpecializedTripDropdownOpen(false);
+    //         }
+    //     };
+
+    //     document.addEventListener("mousedown", handleClickOutside);
+    //     return () => {
+    //         document.removeEventListener("mousedown", handleClickOutside);
+    //     };
+    // }, []);
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setDestinationDropdownOpen(false);
+    //         setSpecializedTripDropdownOpen(false);
+    //     };
+
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
+
+    // const handleSpecializedTripDropdownToggle = () => {
+    //     setSpecializedTripDropdownOpen(!specializedTripDropdownOpen);
+    // }
+
+    let scrollValue = 600
+
+    useEffect(()=>{
+        const handleScroll = ()=>{
+            if(scrollValue<window.scrollY){
+                setBgColor(true)
+            }
+            else{
+                setBgColor(false)
+            }
+        }
+        window.addEventListener("scroll", handleScroll)
+
+        return ()=>{
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,7 +78,7 @@ function Navbar() {
     return (
         <>
             {/* Desktop + Mobile Navbar */}
-            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} w-full text-white fixed z-30 transition-all duration-300`}>
+            <div className={`${showNavbar ? 'translate-y-0' : '-translate-y-full'} ${BgColor ? "bg-black/80" : ""} w-full text-white fixed z-30 transition-all duration-300`}>
                 <div className="max-w-7xl mx-auto py-4 px-4 flex items-center justify-between">
                     {/* Logo */}
                     <div className="text-2xl font-bold h-18 mb-5">
@@ -57,39 +100,27 @@ function Navbar() {
                                 Mice
                             </Link>
                         </li>
-                        <li onClick={handleDestinationDropdownToggle} className="group relative hover:text-yellow-400 cursor-pointer">
+                        <li className="relative group cursor-pointer hover:text-yellow-400">
                             <div className="flex items-center justify-center">
-                                <span>Destination</span>
-                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 ${destinationDropdownOpen ? "-rotate-180" : ""}`} />
+                                <span className=' py-4'>Destination</span>
+                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 group-hover:-rotate-180`} />
                             </div>
 
                             {/* Dropdown Menu */}
-                            <div className={`absolute flex items-start justify-between top-full left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 scale-95 opacity-0 transition-all duration-300 ease-in-out ${destinationDropdownOpen ? "opacity-100 scale-100" : "hidden pointer-events-none"}`}>
+                            <div
+                                className="absolute flex items-start justify-between top-12 left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 opacity-0 scale-95 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100 hidden group-hover:flex"
+                            >
                                 {/* Domestic */}
                                 <div className="mb-4">
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">Domestic</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/ayodhya">Ayodhya</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/goa">Goa</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/kerala">Kerala</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/ladakh">Ladakh</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/kashmir">Kashmir</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/manali">Manali</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/domestic/north-east">North East</Link>
-                                        </li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/ayodhya">Ayodhya</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/goa">Goa</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/kerala">Kerala</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/ladakh">Ladakh</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/kashmir">Kashmir</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/manali">Manali</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/domestic/northeast">North East</Link></li>
                                     </ul>
                                 </div>
 
@@ -97,37 +128,31 @@ function Navbar() {
                                 <div>
                                     <h3 className="font-semibold text-lg text-gray-700 mb-2">International</h3>
                                     <ul className="space-y-1 text-sm text-gray-600">
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/international/dubai">Dubai</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/international/maldive">Maldive</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/international/thailand">Thailand</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/international/singapore">Singapore</Link>
-                                        </li>
-                                        <li className="hover:text-yellow-400 cursor-pointer">
-                                            <Link href="/destinations/international/vietnam">Vietnam</Link>
-                                        </li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/dubai">Dubai</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/maldive">Maldive</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/thailand">Thailand</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/singapore">Singapore</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/vietnam">Vietnam</Link></li>
+                                        <li className="hover:text-yellow-400"><Link href="/destinations/international/bali">Bali</Link></li>
                                     </ul>
                                 </div>
                             </div>
                         </li>
 
 
-                        <li onClick={handleSpecializedTripDropdownToggle} className="relative group hover:text-yellow-400 cursor-pointer">
+
+
+                        <li className="relative group hover:text-yellow-400 cursor-pointer">
                             {/* Parent Wrapper with group */}
                             <div className="flex items-center justify-center">
-                                <span>Specialized Trip</span>
-                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 ${specializedTripDropdownOpen ? "-rotate-180" : ""}`} />
+                                <span className='py-4'>Specialized Trip</span>
+                                <RiArrowDropDownLine className={`text-3xl transform transition-transform duration-300 group-hover:-rotate-180`} />
                             </div>
 
                             {/* Dropdown - placed inside the group so hover works on both link & dropdown */}
-                            <div className={`absolute top-full left-0 mt-2 bg-white shadow-md p-4 w-72 rounded-md z-50 opacity-0 scale-95
-                  transition-all duration-300 ease-in-out ${specializedTripDropdownOpen ? "opacity-100 scale-100" : "hidden pointer-events-none"}`}>
+                            <div
+                                className={`absolute flex items-start justify-between top-12 left-0 bg-white shadow-md mt-2 p-4 w-72 rounded-md z-50 opacity-0 scale-95 translate-y-2 transiton-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100 group-hover:translate-y-0 hidden group-hover:flex`}
+                            >
                                 <ul className="space-y-2 text-sm text-gray-600">
                                     <li className="hover:text-yellow-500 cursor-pointer">Honeymoon Trips</li>
                                     <li className="hover:text-yellow-500 cursor-pointer">Adventure Tours</li>

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 
-export default function DestinationPackages({ pkgData }) {
+export default function DestinationPackages({ pkgData, destination}) {
     
     return (
         <div className="max-w-6xl mx-auto px-4 my-10 transform transition-all duration-75 hover:-translate-y-3">
@@ -11,7 +11,7 @@ export default function DestinationPackages({ pkgData }) {
                 {/* Image */}
                 <div className="w-full md:w-1/2 h-64 md:h-auto overflow-hidden">
                     <img
-                        src={pkgData.image}
+                        src={pkgData.cardImage}
                         alt={pkgData.title}
                         className="w-full h-full object-cover transform group-hover:scale-105 transition duration-300"
                     />
@@ -29,9 +29,11 @@ export default function DestinationPackages({ pkgData }) {
                         </p>
 
                         {/* Hotel Info */}
-                        <p className="text-sm font-medium text-gray-800">
-                            Hotel Included: {pkgData.hotelName} ({pkgData.hotelStars} Star)
-                        </p>
+                        {/* <p className="text-sm font-medium flex items-center gap-2 text-gray-800">
+                            Hotel Included: {pkgData.hotels.map((hotel, index)=>{
+                                return <p key={index}>{hotel}</p>
+                            })}
+                        </p> */}
                     </div>
 
                     {/* Price & Button */}
@@ -48,7 +50,7 @@ export default function DestinationPackages({ pkgData }) {
                         </div>
 
 
-                        <Link href={pkgData.link}>
+                        <Link href={`${destination}/${pkgData.slug}`}>
                             <button className="px-5 py-2 cursor-pointer bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300">
                                 Customise & Get Quote
                             </button>

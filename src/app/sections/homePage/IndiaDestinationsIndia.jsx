@@ -12,10 +12,10 @@ function IndiaDestinations() {
   const destinations = [
     { name: 'Ayodhya', image: '/ayodhya_card.jpeg', link: "/destinations/domestic/ayodhya" },
     { name: 'Goa', image: '/goa_1.jpeg', link: "/destinations/domestic/goa" },
-    { name: 'Kerala', image: '/kerala_1.jpeg', link: "/destinations/domestic/Kerala" },
-    { name: 'Manali', image: '/manali_1.jpeg', link: "/destinations/domestic/Manali" },
-    { name: 'Jaipur', image: '/jaipur_1.jpeg', link: "/destinations/domestic/Jaipur" },
-    { name: 'Kashmir', image: '/kashmire_1.jpeg', link: "/destinations/domestic/Kashmir" },
+    { name: 'Kerala', image: '/kerala_1.jpeg', link: "/destinations/domestic/kerala" },
+    { name: 'Manali', image: '/manali_1.jpeg', link: "/destinations/domestic/manali" },
+    { name: 'Jaipur', image: '/jaipur_1.jpeg', link: "/destinations/domestic/jaipur" },
+    { name: 'Kashmir', image: '/kashmire_1.jpeg', link: "/destinations/domestic/kashmir" },
   ];
 
 
