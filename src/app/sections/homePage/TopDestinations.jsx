@@ -19,7 +19,7 @@ function TopDestinations() {
                     { src: "/homepage/top_destinations/vietnam.jpeg", title: "Vietnam", href: "/destinations/international/vietnam" },
                     { src: "/homepage/top_destinations/singapore.jpeg", title: "Singapore", href: "/destinations/international/singapore" },
                     { src: "/homepage/top_destinations/thailand.jpeg", title: "Thailand", href: "/destinations/international/thailand" },
-                    { src: "/homepage/top_destinations/maldiv.jpeg", title: "Maldives", href: "/destinations/international/maldives" },
+                    { src: "/homepage/top_destinations/maldiv.jpeg", title: "Maldives", href: "/destinations/international/maldive" },
                 ].map((item, index) => (
                     <div key={index} className={`relative group overflow-hidden rounded-[15%] md:rounded-xl ${item.span || ""}`}>
                         <Link href={item.href}>
