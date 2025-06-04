@@ -50,7 +50,8 @@ function Footer() {
                             <div className="flex items-start gap-3">
                                 <FaMapMarkerAlt className="text-xl text-yellow-600 mt-1" />
                                 <span className="font-medium max-w-xs">
-                                    A-116 1St Floor, Vikas Marg, Veer Savarkar Block, Block U, Shakarpur, New Delhi, Delhi, 110092                                </span>
+                                    A-116, Vikas Marg, Shakarpur, Delhi, 110092
+                                </span>
                             </div>
                         </div>
                     </motion.div>
@@ -115,7 +116,7 @@ function Footer() {
                     viewport={{ once: true }}
                     className="mt-10 border-t pt-6 text-center text-sm text-gray-500"
                 >
-                    © {new Date().getFullYear()} All Rights Reserved | Designed by Abhi Web Dev
+                    © 2012 All Rights Reserved | Designed by Abhi Web Dev
                 </motion.div>
             </motion.div>
         </footer>
